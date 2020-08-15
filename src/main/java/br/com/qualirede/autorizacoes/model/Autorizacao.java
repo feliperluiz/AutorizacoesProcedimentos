@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import br.com.qualirede.autorizacoes.enums.PERMISSAO;
 import br.com.qualirede.autorizacoes.enums.SEXO;
 
 @Entity
@@ -28,11 +29,11 @@ public class Autorizacao implements Serializable {
 	@Column(name = "idade", nullable = false, insertable = true, updatable = true)
 	private Integer idade;
 	
-	@Column(name = "procedimento", nullable = false, insertable = true, updatable = true)
+	@Column(name = "sexo", nullable = false, insertable = true, updatable = true)
 	private SEXO sexo;
 	
-	@Column(name = "permitido", nullable = false, insertable = true, updatable = true)
-	private boolean isPermitido;
+	@Column(name = "permissao", nullable = false, insertable = true, updatable = true)
+	private PERMISSAO permissao;
 
 	
 	public Integer getId() {
@@ -54,17 +55,17 @@ public class Autorizacao implements Serializable {
 		this.idade = idade;
 	}
 	
-	public boolean isPermitido() {
-		return isPermitido;
-	}
-	public void setPermitido(boolean isPermitido) {
-		this.isPermitido = isPermitido;
-	}
 	public SEXO getSexo() {
 		return sexo;
 	}
 	public void setSexo(SEXO sexo) {
 		this.sexo = sexo;
+	}
+	public PERMISSAO getPermissao() {
+		return permissao;
+	}
+	public void setPermissao(PERMISSAO permissao) {
+		this.permissao = permissao;
 	}
 		
 	

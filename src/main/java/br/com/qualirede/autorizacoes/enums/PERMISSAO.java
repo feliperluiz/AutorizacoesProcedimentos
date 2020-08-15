@@ -1,12 +1,12 @@
 package br.com.qualirede.autorizacoes.enums;
 
-public enum SEXO {
+public enum PERMISSAO {
 	
-	M("Masculino"), F("Feminino");
+	SIM("Sim"), NAO("Não");
 	
 	private String valor;
 	
-	private SEXO(String valor) {
+	private PERMISSAO(String valor) {
 		this.valor = valor;
 	}
 
