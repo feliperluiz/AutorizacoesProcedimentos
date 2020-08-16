@@ -27,7 +27,7 @@ public class AutorizacaoService {
 	}
 
 	public PERMISSAO obterAutorizacao(Integer procedimento, Integer idade, SEXO sexoEnum) {
-		List<Autorizacao> autorizacoes = autorizacaoRepository.findAllByProcedimentoAndIdadeAndSexoEnum(procedimento, idade, sexoEnum);
+		List<Autorizacao> autorizacoes = autorizacaoRepository.findAllByProcedimentoAndIdadeAndSexo(procedimento, idade, sexoEnum);
 		return !autorizacoes.isEmpty() ? PERMISSAO.SIM : PERMISSAO.NAO;
 		
 	}
