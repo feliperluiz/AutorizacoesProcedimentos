@@ -9,6 +9,6 @@ import br.com.qualirede.autorizacoes.model.Autorizacao;
 
 public interface AutorizacaoRepository extends JpaRepository<Autorizacao, Long> {
 
-	public List<Autorizacao> findAllByProcedimentoAndIdadeAndSexoEnum(Integer procedimento, Integer idade, SEXO sexoEnum);
+	public List<Autorizacao> findAllByProcedimentoAndIdadeAndSexo(Integer procedimento, Integer idade, SEXO sexo);
 
 }
