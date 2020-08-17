@@ -18,6 +18,7 @@ public class AutorizacaoController {
 	@Autowired
 	private AutorizacaoService autorizacaoService;
 	
+	
 	@GetMapping(path = "/cadastro/procedimento/{proc}/idade/{idade}/sexo/{sexo}/autoriza/{permissao}") 
 	public ResponseEntity<String> cadastrarProcedimento(@PathVariable("proc") Integer procedimento, 
             @PathVariable("idade") Integer idade,

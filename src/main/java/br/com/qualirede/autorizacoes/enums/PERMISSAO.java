@@ -2,7 +2,7 @@ package br.com.qualirede.autorizacoes.enums;
 
 public enum PERMISSAO {
 	
-	SIM("Sim"), NAO("Não");
+	SIM("SIM"), NAO("NÃO");
 	
 	private String valor;
 	
