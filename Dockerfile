@@ -1,6 +1,12 @@
 FROM openjdk:8-jdk-alpine
-RUN addgroup -S spring && adduser -S spring -G spring
-USER spring:spring
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} autorizacoes.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+RUN mkdir /home/service
+COPY target/*.jar /home/service/service.jar
+WORKDIR /home/service
+RUN jar -xf service.jar
+
+FROM openjdk:8-jdk-alpine
+ARG DEPENDENCY=/home/service
+COPY --from=builder ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=builder ${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=builder ${DEPENDENCY}/BOOT-INF/classes /app
+ENTRYPOINT exec java $JVM_OPTS -cp app:app/lib/* br.com.qualirede.autorizacoes.AutorizacoesProcedimentosApplication

@@ -11,4 +11,8 @@ psql -d autorizacaodb -a -f /AutorizacoesProcedimentos/database/creation/create-
 
 ## Execução
 
-docker build -t springio/autorizacoes .
+mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=qualirede/autorizacoes
+
+ou
+
+docker build -t qualirede/autorizacoes .
