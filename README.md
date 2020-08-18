@@ -11,8 +11,8 @@ psql -d autorizacaodb -a -f /AutorizacoesProcedimentos/database/creation/create-
 
 ## Execução
 
-No terminal:
+No terminal (com o docker instalado em seu sistema operacional):
 
 docker login
 docker build -t qualirede/autorizacoes .
-docker run -p 8080:8080 -t qualirede/autorizacoes
+docker run -e "SPRING_PROFILES_ACTIVE=dev" -p 8080:8080 -t qualirede/autorizacoes

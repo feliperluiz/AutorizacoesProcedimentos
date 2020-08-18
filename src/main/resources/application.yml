@@ -2,7 +2,7 @@ server:
   port: 8000
 
 spring:
-  profiles: dev,local
+  profiles: dev
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.json
   datasource:
